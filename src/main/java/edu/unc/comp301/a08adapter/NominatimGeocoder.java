@@ -24,7 +24,7 @@ public class NominatimGeocoder {
     httpBuilder.addQueryParameter("q", address);
     httpBuilder.addQueryParameter("format", "json");
     httpBuilder.addQueryParameter("limit", "1");
-    return address;
+    return httpBuilder.build().toString();
   }
 
   protected Request buildRequest(String url) {
