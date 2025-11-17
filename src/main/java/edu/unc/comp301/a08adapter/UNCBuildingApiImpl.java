@@ -25,6 +25,6 @@ public class UNCBuildingApiImpl implements UNCBuildingApi {
 
   public void add(String name, String description) {
     Building building = new BuildingImpl(name, description);
-    buildings.put(name, building);
+    buildings.put(name.toLowerCase(), building);
   }
 }
