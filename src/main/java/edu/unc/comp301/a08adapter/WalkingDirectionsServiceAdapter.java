@@ -6,9 +6,9 @@ import java.util.List;
 public class WalkingDirectionsServiceAdapter implements UNCBuildingApi {
 
   private final WalkingDirectionsService service;
-  private final UNCBuildingApiImpl api;
+  private final UNCBuildingApi api;
 
-  public WalkingDirectionsServiceAdapter(WalkingDirectionsService service, UNCBuildingApiImpl api) {
+  public WalkingDirectionsServiceAdapter(WalkingDirectionsService service, UNCBuildingApi api) {
     this.service = service;
     this.api = api;
   }
