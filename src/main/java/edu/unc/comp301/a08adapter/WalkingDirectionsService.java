@@ -20,10 +20,10 @@ public class WalkingDirectionsService {
     this.apiKey = apiKey;
   }
 
-  public String createURL(Location start, Location end) {
+  public String createURL(double start_lon, double start_lat, double end_lon, double end_lat) {
     HttpUrl.Builder httpBuilder = HttpUrl.parse(baseURL).newBuilder();
-    String startPoint = start.getLongitude() + "," + start.getLatitude();
-    String endPoint = end.getLongitude() + "," + start.getLatitude();
+    String startPoint = start_lon + "," + start_lat;
+    String endPoint = end_lon + "," + end_lat;
     httpBuilder.addQueryParameter("api_key", apiKey);
     httpBuilder.addQueryParameter("start", startPoint);
     httpBuilder.addQueryParameter("end", endPoint);
