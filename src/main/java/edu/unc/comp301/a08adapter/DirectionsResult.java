@@ -13,7 +13,7 @@ public class DirectionsResult {
     this.totalDuration = totalDuration;
   }
 
-  public List<Step> getStep() {
+  public List<Step> getSteps() {
     return step;
   }
 
