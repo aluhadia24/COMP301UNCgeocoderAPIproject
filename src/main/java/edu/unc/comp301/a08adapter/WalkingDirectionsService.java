@@ -20,10 +20,10 @@ public class WalkingDirectionsService {
     this.apiKey = apiKey;
   }
 
-  public String createURL(double start_lon, double start_lat, double end_lon, double end_lat) {
+  public String createURL(double startLon, double startLat, double endLon, double endLat) {
     HttpUrl.Builder httpBuilder = HttpUrl.parse(baseURL).newBuilder();
-    String startPoint = start_lon + "," + start_lat;
-    String endPoint = end_lon + "," + end_lat;
+    String startPoint = startLat + "," + startLon;
+    String endPoint = endLat + "," + endLon;
     httpBuilder.addQueryParameter("api_key", apiKey);
     httpBuilder.addQueryParameter("start", startPoint);
     httpBuilder.addQueryParameter("end", endPoint);
@@ -72,10 +72,10 @@ public class WalkingDirectionsService {
   }
 
   public void getWalkingDirections(
-      double start_lon, double start_lat, double end_lon, double end_lat) throws IOException {
+      double startLon, double startLat, double endLon, double endLat) throws IOException {
     DirectionsResult result =
         parseDirections(
-            sendRequest(buildRequest(createURL(start_lon, start_lat, end_lon, end_lat))));
+            sendRequest(buildRequest(createURL(startLon, startLat, endLon, endLat))));
     List<Step> steps = result.getSteps();
     for (int i = 0; i < steps.size(); i++) {
       System.out.println(
