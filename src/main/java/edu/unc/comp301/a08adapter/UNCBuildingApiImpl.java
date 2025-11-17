@@ -7,7 +7,7 @@ public class UNCBuildingApiImpl implements UNCBuildingApi {
 
   @Override
   public Building getBuilding(String name) {
-    return buildings.get(name);
+    return buildings.get(name.toLowerCase());
   }
 
   @Override
