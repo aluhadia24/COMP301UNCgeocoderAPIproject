@@ -71,8 +71,11 @@ public class WalkingDirectionsService {
     return new DirectionsResult(list, totalDistance, totalTime);
   }
 
-  public void getWalkingDirections(Location start, Location end) throws IOException {
-    DirectionsResult result = parseDirections(sendRequest(buildRequest(createURL(start, end))));
+  public void getWalkingDirections(
+      double start_lon, double start_lat, double end_lon, double end_lat) throws IOException {
+    DirectionsResult result =
+        parseDirections(
+            sendRequest(buildRequest(createURL(start_lon, start_lat, end_lon, end_lat))));
     List<Step> steps = result.getSteps();
     for (int i = 0; i < steps.size(); i++) {
       System.out.println(
