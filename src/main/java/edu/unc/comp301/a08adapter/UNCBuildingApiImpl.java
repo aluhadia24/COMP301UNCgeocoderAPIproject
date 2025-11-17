@@ -23,7 +23,8 @@ public class UNCBuildingApiImpl implements UNCBuildingApi {
   @Override
   public void getDirections(String startBuilding, String endBuilding) {}
 
-  public void add(String name, Building description) {
-    buildings.put(name, description);
+  public void add(String name, String description) {
+    Building building = new BuildingImpl(name, description);
+    buildings.put(name, building);
   }
 }
